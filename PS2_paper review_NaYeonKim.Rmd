@@ -1,0 +1,100 @@
+---
+title: "PS2_2 paper review"
+author: "김나연"
+date: "2026-11-17"
+output: html_document
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
+# `<`{=html}How conditioning on posttreatment variables can ruin your experiment and what to do about it.`>`{=html}
+
+**Contributor:** <Na Yeon Kim>
+
+**Full citation:** \<Montgomery, J.
+M., Nyhan, B., & Torres, M.
+(2018).
+How conditioning on posttreatment variables can ruin your experiment and what to do about it.
+*American Journal of Political Science*, *62*(3), 760-775.\>
+
+## 1. What the paper establishes
+
+Political scientists increasingly rely on experiments to estimate causal effects without bias.
+In practice, however, experiments encounter problems such as noncompliance and participant attrition, and the methods researchers use to address them can bias those estimates.
+Although the risks of posttreatment bias have long been discussed in statistics, econometrics, and political methodology, the authors argue that applied researchers, reviewers, and editors may not fully understand or may overlook those risks.
+They examine 75 experimental studies published in *APSR*, *AJPS*, and *JOP* between 2012 and 2014, coding whether researchers excluded participants based on posttreatment criteria, controlled for or interacted treatment with variables that could plausibly be affected by it, or conditioned on variables the authors identified as experimental outcomes.
+The authors then use analytical examples and reanalyses of real-world studies to show how such conditioning can distort experimental findings, and offer guidance for addressing practical research problems without introducing posttreatment bias.
+
+## 2. Checks for a reviewer
+
+**(a) Assess whether the coding criteria identify confirmed cases of posttreatment conditioning.** The authors code articles for subsetting based on “potentially posttreatment” criteria and for controlling for or interacting treatment with variables that “could plausibly be affected” by it (p. 761).
+Assess whether the coding distinguishes variables shown to be affected by treatment from those judged only plausibly affected.
+Because posttreatment status is causal, a variable measured after treatment is not necessarily posttreatment if the treatment did not affect it.
+Consider whether the reported prevalence is robust to a stricter coding rule that counts only cases where the treatment’s effect on the conditioned variable is demonstrated.
+
+**(b) Assess what the 75-article review can establish about prevalence.** The sample covers experimental articles in three leading journals over 2012–2014.
+Assess whether the article-level coding and this journal-and-period scope support the authors’ claims about how common the practice is in experimental political science.
+The review may establish that the problem appears in these journals during this period without establishing its prevalence across the wider discipline or in other types of outlets.
+
+**(c) Assess the scope of the practical recommendations.** The authors strongly advise researchers not to condition on posttreatment variables.
+At the same time, they discuss methods that can address noncompliance or attrition under additional assumptions, and some of these methods target estimands other than the ATE.
+Assess whether the paper makes clear that its practical recommendation is directed primarily at standard regression-based estimation of the ATE, rather than implying that every analysis involving posttreatment variables is invalid.
+In particular, consider whether the authors sufficiently distinguish the intention-to-treat effect (ITT), the complier average causal effect (CACE) estimated by instrumental variables, and methods for handling missing outcomes under specific assumptions.
+
+## 3. Evidence
+
+**For (a).** The authors state that they coded whether articles subsetted data based on potentially posttreatment criteria; controlled for or interacted treatment with variables that could plausibly be affected by treatment; or conditioned on variables that the original authors identified as experimental outcomes (p. 761).
+They report that 46.7% of the 75 articles engaged in posttreatment conditioning, including 21.3% that controlled for or interacted with a posttreatment variable and 14.7% that dropped cases based on posttreatment criteria (Table 1, p. 761).
+However, the authors also identify a more clearly evidenced subset: 12% of the articles conditioned on a variable that the article itself showed to be affected by treatment (p. 762).
+This distinction makes it useful to ask how much the overall prevalence estimate depends on cases classified as only potentially or plausibly posttreatment.
+The authors direct readers to the Supporting Information for further details about the coding procedures (p. 761, fn. 1).
+
+**For (b).** The sample consists of 75 articles published in *APSR*, *AJPS*, and *JOP* from 2012 to 2014 that included a survey, field, laboratory, or lab-in-the-field experiment (p. 761).
+The reported 46.7% is therefore an estimate for this defined set of articles, rather than a direct estimate for all political science experiments or for the share of individual analyses that use the practice.
+The authors acknowledge that their review is limited to experiments and speculate that posttreatment conditioning may be even more prevalent in observational studies, less prestigious outlets, or books (p. 761).
+The reviewer should therefore distinguish the evidence from this sample from broader claims about prevalence across the discipline.
+
+**For (c).** The authors’ practical advice is categorical: “Do not condition on posttreatment variables,” including by controlling for them in regressions or subsetting the data (p. 770).
+However, they also discuss alternatives.
+For noncompliance, they describe the ITT estimate and two-stage least squares using random assignment as an instrument; they clarify that the latter estimates the CACE, a different estimand from the ATE (p. 771).
+For attrition, they discuss imputation or marginal structural models under assumptions about the missingness process, as well as extreme-value bounds, double sampling, and instrumental-variable approaches (p. 772).
+They also explain that mediation analyses require additional assumptions, such as sequential ignorability (pp. 772–773).
+
+These discussions show that the authors do not reject all analyses involving posttreatment variables.
+A reviewer could nevertheless ask whether the paper’s broad practical language clearly limits the recommendation to standard ATE estimation and distinguishes methods that rely on additional assumptions or target different estimands.
+
+## 4. Scope
+
+**Applies to:** Evaluating the empirical prevalence claim based on the 75-article review, especially the coding of cases classified as potentially or plausibly posttreatment.
+
+**Does not apply to:** The paper’s general analytical argument that conditioning on a variable affected by treatment can undermine randomization.
+The proposed checks concern how the authors identify and count examples in the literature, rather than whether the underlying causal argument is valid.
+
+## 5. What failure looks like
+
+The review would be incomplete if it treated all plausibly affected variables as confirmed cases of posttreatment conditioning, or generalized the findings beyond the 75 articles examined.
+It would also be incomplete if it described every method involving posttreatment variables as invalid without distinguishing standard ATE estimation from alternative methods that require additional assumptions or target different estimands.
+
+## 6. Test cases
+
+**SHOULD trigger:** Ahuja, A., & Mcclendon, G.
+(2026).
+The Effects of Exposure to New Electoral Rules: Field Experimental Evidence from Sierra Leone.
+*American Political Science Review*, 1-20.
+
+The field experiment had 35% attrition between the baseline and endline surveys, and the main analysis uses the 737 respondents who completed both waves (pp. 1197–98).
+The authors report no detectable difference in attrition between treatment and control groups and test whether baseline covariates predict differential attrition.
+However, the main estimates are based on endline completers, and the paper does not establish that attrition is unrelated to potential outcomes or unobserved characteristics.
+Because conditioning on survey completion can select on a posttreatment variable, this study should trigger the checklist’s attrition item.
+The authors’ diagnostics are relevant evidence, but they do not by themselves rule out attrition bias.
+
+**Should NOT trigger:** Kao, J. C.
+(2026).
+How the Pro-Beijing Media Influences Voters: Evidence from a Randomized Field Experiment.
+*American Political Science Review*, 1-20.
+
+The study estimates ITT effects using treatment assignment and estimates effects among compliers using two-stage least squares, with assignment as an instrument for compliance (p. 804).
+It also examines heterogeneity by political attentiveness and partisan predispositions measured in the baseline survey (pp. 799, 805–06).
+Thus, it does not appear to drop participants for failing a posttreatment manipulation check, control for a posttreatment mediator, or estimate the complier effect by simply comparing a posttreatment-selected group.
+In these respects, the study should not trigger the checklist.
